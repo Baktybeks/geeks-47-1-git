@@ -1,0 +1,196 @@
+@import "./mixins";
+$color: green;
+
+
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter28pt-Medium.woff2") format(woff2);
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter28pt-Regular.woff2") format(woff2);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter28pt-SemiBold.woff2") format(woff2);
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-red: $color;
+    --font-family: "Inter", san-serif;
+    --color-light: #fff;
+    --color-dark: #101828;
+    --color-light-grey: #667085;
+    --color-perple: #6941c6;
+    --color-blue: #344054;
+    --color-border: #d0d5dd;
+    --border-radius: 8px;
+    --border: 1px solid var(--color-border);
+    --transition-duration: 0.2s;
+    --container-width: 1520px;
+    --container-padding-x: 200px;
+    --header-hight: 65px
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-light-grey);
+    //background-color: $color;
+    @include laptop {
+        background-color: aqua;
+    }
+    @include tablet {
+        background-color: red;
+    }
+    @include mobile960 {
+        background-color: green;
+    }
+    @include mobile {
+        background-color: yellow;
+    }
+    @include mobile480 {
+        background-color: grey;
+    }
+    @include mobile360 {
+        background-color: purple;
+    }
+}
+
+.header {
+    //background-color: red;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: var(--header-hight);
+    align-items: center;
+    padding-inline: 20px 24px;
+    &-info {
+        display: flex;
+        column-gap: 32px;
+    }
+    &-menu {
+        display: flex;
+        align-items: center;
+
+        &-list {
+            display: flex;
+            column-gap: 18px;
+            align-items: center;
+        }
+
+        &-item {
+            display: flex;
+        }
+
+        &-link {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 171%;
+            color: #252c32;
+        }
+    }
+
+}
+
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+}
+.header-logo {
+    /*margin-bottom: 3px;*/
+}
+
+
+
+
+.header-all-icons {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    aspect-ratio: 1;
+}
+
+.header-icon-gamburger {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+    .header-menu {
+        display: none;
+    }
+    .header-icon-gamburger {
+        display: block;
+    }
+}
+@media screen and (max-width: 760px) {
+    .header-menu {
+        display: none;
+    }
+    .header-icon-gamburger {
+        display: block;
+    }
+}
+
+
+.main {
+    margin-inline: auto;
+    @include flex-center;
+    .analytic {
+        @include flex-center;
+        flex-direction: column;
+        flex-direction: column;
+        &-title {
+            font-weight: 600;
+            font-size: 60px;
+            line-height: 72px;
+            margin-bottom: 24px;
+            //color: red;
+            @include mobile960 {
+                font-size: 44px !important;
+            }
+            @include mobile480 {
+                font-size: 32px;
+            }
+            @include mobile360 {
+                font-size: 28px;
+            }
+        }
+        &-subtitle {
+            margin-bottom: 48px;
+        }
+        &-btns {
+            @include flex-center;
+        }
+    }
+}
+
+.btn {
+    @include button(blue, white, 30px)
+}
+
+
