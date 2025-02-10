@@ -20,7 +20,7 @@
   font-display: swap;
 }
 :root {
-  --color-red: $color;
+  --color-red: red;
   --font-family: "Inter", san-serif;
   --color-light: #fff;
   --color-dark: #101828;
@@ -42,7 +42,7 @@ body {
 }
 
 .header {
-  background-color: red;
+  background-color: green;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -127,6 +127,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .main .analytic {
   display: flex;
@@ -140,7 +141,6 @@ body {
   font-size: 60px;
   line-height: 72px;
   margin-bottom: 24px;
-  color: red;
 }
 @media screen and (max-width: 960px) {
   .main .analytic-title {
@@ -165,11 +165,44 @@ body {
   justify-content: center;
   align-items: center;
 }
+.main .notebook {
+  width: 800px;
+}
+.main .notebook .img {
+  width: 500px;
+  max-width: 100%;
+  min-width: 300px;
+}
 
 .btn {
   background: blue;
   border-radius: 30px;
   color: white;
+}
+
+.title {
+  font-size: clamp(100px, 10vw, 200px);
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  border: 1px solid red;
+}
+.box .squre {
+  height: 100px;
+  color: red;
+  background-color: #6941c6;
+}
+.box .span {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: yellow;
 }
 
 /*# sourceMappingURL=styles.css.map */

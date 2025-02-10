@@ -1,5 +1,5 @@
 @import "./mixins";
-$color: green;
+$color: blue;
 
 
 @font-face {
@@ -27,7 +27,7 @@ $color: green;
 }
 
 :root {
-    --color-red: $color;
+    --color-red: red;
     --font-family: "Inter", san-serif;
     --color-light: #fff;
     --color-dark: #101828;
@@ -47,28 +47,28 @@ body {
     font-family: var(--font-family);
     color: var(--color-light-grey);
     //background-color: $color;
-    @include laptop {
-        background-color: aqua;
-    }
-    @include tablet {
-        background-color: red;
-    }
-    @include mobile960 {
-        background-color: green;
-    }
-    @include mobile {
-        background-color: yellow;
-    }
-    @include mobile480 {
-        background-color: grey;
-    }
-    @include mobile360 {
-        background-color: purple;
-    }
+    //@include laptop {
+    //    background-color: aqua;
+    //}
+    //@include tablet {
+    //    background-color: red;
+    //}
+    //@include mobile960 {
+    //    background-color: green;
+    //}
+    //@include mobile {
+    //    background-color: yellow;
+    //}
+    //@include mobile480 {
+    //    background-color: grey;
+    //}
+    //@include mobile360 {
+    //    background-color: purple;
+    //}
 }
 
 .header {
-    //background-color: red;
+    background-color: green;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -160,6 +160,7 @@ body {
 .main {
     margin-inline: auto;
     @include flex-center;
+    flex-direction: column;
     .analytic {
         @include flex-center;
         flex-direction: column;
@@ -187,6 +188,14 @@ body {
             @include flex-center;
         }
     }
+    .notebook {
+        width: 800px;
+        .img {
+            width: 500px;
+            max-width: 100%;
+            min-width: 300px;
+        }
+    }
 }
 
 .btn {
@@ -194,3 +203,29 @@ body {
 }
 
 
+
+
+.title {
+    font-size: clamp(100px, 10vw, 200px);
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    border: 1px solid red;
+    .squre {
+        height: 100px;
+        color: red;
+        background-color: #6941c6;
+    }
+    .span {
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        background-color: yellow;
+    }
+}
